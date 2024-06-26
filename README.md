@@ -1,4 +1,5 @@
 
+
 # Service Booking System
 
 
@@ -38,53 +39,6 @@ Install for my project
     npm install zod
 ```
     
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`PORT`
-
-`DATABASE_URL`
-
-`JWT_ACCESS_SECRET`
-
-
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://link-to-project
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-
 ## API Endpoints
 
 ### User Routes
@@ -143,6 +97,57 @@ Start the server
 ```http
   Update Service (Admin Only): PUT /api/services/:id
 ```
+
+
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`PORT`
+
+`DATABASE_URL`
+
+`JWT_ACCESS_SECRET`
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
 
 
 
