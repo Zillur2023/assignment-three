@@ -8,7 +8,7 @@ import AppError from "../errors/AppError";
 import { TErrorMessages } from "../interface/error";
 
 
-const globalErrorHandler: ErrorRequestHandler = (err, req, res) => {
+const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     let statusCode = 500;
     let message = err.message ||'Something went wrong!';
     let errorMessages: TErrorMessages = [
