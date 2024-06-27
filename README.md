@@ -1,6 +1,6 @@
 
 
-# Service Booking System
+# Car Wash Booking System
 
 
 
