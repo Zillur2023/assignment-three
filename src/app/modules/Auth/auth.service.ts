@@ -22,6 +22,7 @@ const loginUser = async (payload: ILoginUser) => {
     if (!passwordMatched)
       throw new AppError(httpStatus.FORBIDDEN, 'Password do not matched');
   
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {password, ...userWithoutPassword} = userWithPassword.toObject()
   
   

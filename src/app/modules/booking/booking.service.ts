@@ -56,10 +56,6 @@ const getAllBookingsIntoDB = async () => {
     .populate("service")
     .populate("slot");
 
-    if ( result.length === 0 ) {
-      throw new AppError (httpStatus.NOT_FOUND, 'No Data Found')
-    }
-
   return result;
 };
 
@@ -73,10 +69,6 @@ const getMybookingIntoDB = async (user: JwtPayload) => {
   .populate("customer")
   .populate("service")
   .populate("slot");;
-
-  if ( result.length === 0 ) {
-    throw new AppError (httpStatus.NOT_FOUND, "No Data Found")
-  }
 
   return result;
 };

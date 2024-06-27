@@ -28,6 +28,7 @@ const createSlotIntoDB = async (payload: ISlot) => {
     throw new Error("endTime must geater than startTime");
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, prefer-const
   let result: any = [];
   for (
     let i = 0;
@@ -87,10 +88,6 @@ const availableIntoDB = async (payload: IAvailableSlot) => {
   }
 
   const result = await Slot.find(query);
-
-  if (result.length === 0) {
-    throw new AppError(httpStatus.NOT_FOUND, "No Data Found ");
-  }
 
   return result;
 };

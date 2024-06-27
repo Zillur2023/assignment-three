@@ -4,18 +4,25 @@ import catchAsync from "../utils/catchAsync";
 import jwt, { JwtPayload } from 'jsonwebtoken'
 import config from "../config";
 import User from "../modules/user/user.model";
+import sendResponse from "../utils/sendResponse";
 
 
 const auth = (payload: string) => {
     // console.log(role)
     return catchAsync(async (req, res, next) => {
-      const token = req.headers.authorization?.split(' ')[1];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const token: any = req.headers.authorization?.split(' ')[1];
 
       // console.log({token})
   
       // checking if the token is missing
       if (!token) {
-        throw new AppError(httpStatus.UNAUTHORIZED, 'You are not authorized!');
+        // throw new AppError(httpStatus.UNAUTHORIZED, 'You have no access to this route');
+        sendResponse(res, {
+          success:  false,
+          statusCode: 401,
+          message: "You have no access to this route",
+        });
       }
   
       // checking if the given token is valid

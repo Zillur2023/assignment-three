@@ -1,6 +1,7 @@
 
 export type TErrorMessages = {
     path: string | number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     message: any;
   }[];
   

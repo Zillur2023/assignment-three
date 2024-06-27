@@ -7,13 +7,6 @@ import { USER_ROLE } from "../user/user.constant";
 
 const router = Router();
 
-// router.post(
-//   '/create-student',
-//   auth(USER_ROLE.admin),
-//   validateRequest(createStudentValidationSchema),
-//   UserControllers.createStudent,
-// );
-
 router.post(
   "/services",
   auth(USER_ROLE.admin),

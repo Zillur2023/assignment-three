@@ -8,8 +8,9 @@ import AppError from "../errors/AppError";
 import { TErrorMessages } from "../interface/error";
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
-    let statusCode = 500;
+    let statusCode = 400;
     let message = err.message ||'Something went wrong!';
     let errorMessages: TErrorMessages = [
       {
@@ -57,9 +58,11 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
         }
       ]
     }
+
   
     return res.status(statusCode).json({
       success: false,
+      statusCode,
       message,
       errorMessages,
       // err,

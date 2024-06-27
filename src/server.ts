@@ -3,7 +3,7 @@ import config from './app/config';
 import mongoose from 'mongoose';
 import app from './app';
 
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let server: Server
 
 // main().catch(err => console.log(err));

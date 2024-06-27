@@ -1,5 +1,6 @@
 import {  TErrorMessages, TGenericErrorResponse } from "../interface/error"
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const handleDuplicateError = (err: any): TGenericErrorResponse => {
     const match = err.message.match(/"([^"]*)"/)
     const extractedMesssage = match && match[1]
@@ -15,7 +16,7 @@ const handleDuplicateError = (err: any): TGenericErrorResponse => {
 
     return {
         statusCode,
-        message: 'Invalid ID',
+        message: `${extractedMesssage} is already exists`,
         errorMessages
     }
 }
