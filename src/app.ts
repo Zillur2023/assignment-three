@@ -4,6 +4,9 @@ import cookieParser from "cookie-parser";
 import globalErrorHandler from "./app/middlewares/globalErrorhandler";
 import notFound from "./app/middlewares/notFound";
 import router from "./app/routes";
+import sendResponse from "./app/utils/sendResponse";
+import httpStatus from "http-status";
+import catchAsync from "./app/utils/catchAsync";
 // import catchAsync from "./app/utils/catchAsync";
 // import sendResponse from "./app/utils/sendResponse";
 // import httpStatus from "http-status";
@@ -18,19 +21,19 @@ app.use(cors({ origin: ["http://localhost:5000"] }));
 app.use("/api", router);
 
 
-// const test = catchAsync (async(req, res) => {
+const test = catchAsync (async(req, res) => {
 
-//     sendResponse(res, {
-//         statusCode: httpStatus.OK,
-//         success: true,
-//         message: `App(Car Wash Booking System) is  running......`,
-//         // message: "User registered successfully",
-//         data: null,
-//       })
-//     }
-// )
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: `App(Car Wash Booking System) is  running......`,
+        // message: "User registered successfully",
+        data: null,
+      })
+    }
+)
 
-// app.use('/', test)
+app.use('/', test)
 
 app.use(globalErrorHandler);
 
