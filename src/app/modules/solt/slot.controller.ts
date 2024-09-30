@@ -16,6 +16,7 @@ const createSlot = catchAsync( async (req, res) => {
 } )
 
 const available = catchAsync( async (req, res) => {
+  console.log('available',req.query)
   const result = await SlotServices.availableIntoDB(req.query )
 
     sendResponse(res, {

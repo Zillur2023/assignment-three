@@ -10,7 +10,7 @@ const notFound = (
   
     return res.status(httpStatus.NOT_FOUND).json({
       success: false,
-      statusCode: 401,
+      statusCode: 404,
       message:'Not Found',
     });
   };

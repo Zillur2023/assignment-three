@@ -66,7 +66,7 @@ const getMybookingIntoDB = async (user: JwtPayload) => {
   }
 
   const result = await Booking.find({ customer: isUserExists?._id })
-  .populate("customer")
+  .select("-customer")
   .populate("service")
   .populate("slot");;
 

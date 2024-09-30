@@ -87,7 +87,7 @@ const availableIntoDB = async (payload: IAvailableSlot) => {
     query = { isBooked: "available" };
   }
 
-  const result = await Slot.find(query);
+  const result = await Slot.find(query).populate("service");
 
   return result;
 };
